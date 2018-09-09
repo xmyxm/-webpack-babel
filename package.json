@@ -1,0 +1,23 @@
+{
+  "name": "webpack-babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xmyxm/webpack-babel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xmyxm/webpack-babel/issues"
+  },
+  "homepage": "https://github.com/xmyxm/webpack-babel#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-types": "^6.26.0"
+  }
+}
