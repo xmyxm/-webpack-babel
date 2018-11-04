@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "towx": "babel ./plugin/swantowx.js ./src/js/baiduapi.js",
+    "debug": "babel-node plugin/swantowx --inspect --debug-brk --nolazy plugin/swantowx"
   },
   "repository": {
     "type": "git",

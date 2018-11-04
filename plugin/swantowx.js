@@ -9,6 +9,7 @@ module.exports = function({ types: babelTypes }) {
         visitor: {
             // 成员表达式
             MemberExpression(path, state) {
+                console.log(`成员表达式:MemberExpression, 时间:${Date.now()}, 参数:${JSON.stringify(state)}`)
                 // 如果 object 对应的节点匹配了模式 "process.env"
                 if (path.get("object").matchesPattern("swan")) {
                     // 这里返回结果为字符串字面量类型的节点
