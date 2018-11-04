@@ -7,17 +7,17 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch-vai-babel-node",
-            "runtimeExecutable": "npm",
-            "runtimeArgs": [
-                "run",
-                "towx"
-            ],
-            "port": 9229,
-            "env": {
-                "NODE_ENV": "develop"
-            },
-            "console": "internalConsole"
+            "name": "启动程序",
+            "program": "${workspaceRoot}/plugin/debug.js",
+            "console": "integratedTerminal",
+            "protocol": "inspector"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "附加到进程",
+            "address": "localhost",
+            "port": 5858
         }
     ]
 }
