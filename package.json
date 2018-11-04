@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/xmyxm/webpack-babel#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-types": "^6.26.0"
   }

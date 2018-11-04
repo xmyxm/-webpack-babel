@@ -1,0 +1,10 @@
+{
+    "plugins": [
+        [
+            "./plugin/swantowx.js",
+            {
+                "name": "百度"
+            }
+        ]
+    ]
+}
