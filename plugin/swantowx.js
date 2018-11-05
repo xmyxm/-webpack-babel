@@ -22,8 +22,13 @@ const towx = function(babelTypes) {
                     const key = path.toComputedKey();
                     if (babelTypes.isStringLiteral(key)) {
                         // path.replaceWith( newNode ) 用来替换当前节点
-                        // babelTypes.valueToNode( value ) 用来创建节点，如果value是字符串，则返回字符串字面量类型的节点
-                        path.replaceWith(babelTypes.valueToNode(`wx.${baiduMap[key.value]}`));
+                        path.replaceWith(
+                            // babelTypes.valueToNode( value ) 用来创建节点，如果value是字符串，则返回字符串字面量类型的节点
+                            babelTypes.MemberExpression(
+                                babelTypes.Identifier('wx'),
+                                babelTypes.Identifier(baiduMap[key.value])
+                            )
+                        )
                     }
                 }
             }
@@ -31,7 +36,7 @@ const towx = function(babelTypes) {
     }
 }
 
-const code = fs.readFileSync(filePath,'utf-8')
+const code = fs.readFileSync(filePath, 'utf-8')
 const result = babel.transform(code, {
     plugins: [{
         //前面的Visitor
