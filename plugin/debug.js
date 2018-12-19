@@ -1,5 +1,5 @@
-var babel = require('babel-core');
-var t = require('babel-types');
+var babel = require('babel-core')
+var babelTypes = require('babel-types')
 var code = `var func = ()=>{
     console.log(this.b)
   };`
@@ -8,17 +8,17 @@ const Visitor = {
     //this表达式
     ThisExpression(path) {
         //构建var _this = this
-        let node = t.VariableDeclaration(
+        let node = babelTypes.VariableDeclaration(
                 'var',
                 [
-                    t.VariableDeclarator(
-                        t.Identifier('_this'),
-                        t.Identifier('this')
+                    babelTypes.VariableDeclarator(
+                        babelTypes.Identifier('_this'),
+                        babelTypes.Identifier('this')
                     )
                 ]
             ),
             //构建 _this标识符
-            str = t.Identifier('_this'),
+            str = babelTypes.Identifier('_this'),
             //查找变量声明的父节点
             //这里只是针对例子的，真正转换需要考虑的情况很多
             parentPath = path.findParent((path) => path.isVariableDeclaration())
@@ -37,7 +37,7 @@ const Visitor = {
     ArrowFunctionExpression(path) {
         var node = path.node
         //构造一个t.FunctionExpression节点，将原有path替换掉即可
-        path.replaceWith(t.FunctionExpression(
+        path.replaceWith(babelTypes.FunctionExpression(
             node.id,
             node.params,
             node.body

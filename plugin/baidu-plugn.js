@@ -1,9 +1,9 @@
 // 百度小程序Api转换微信Api
-const babel = require('babel-core')
-const babelTypes = require('babel-types')
 const fs = require('fs')
 const path = require('path')
-const filePath = path.resolve('./src/js/baiduapi.js')
+const babel = require('babel-core')
+const babelTypes = require('babel-types')
+const filePath = path.resolve('../src/js/baidu.js')
 
 const baiduMap = {
     navigateTo: 'switchTab'
@@ -36,12 +36,21 @@ const towx = function(babelTypes) {
     }
 }
 
+// 读取js文件字符串
 const code = fs.readFileSync(filePath, 'utf-8')
+
+// 输出转换之前的code
+console.log(code)
+
+// js字符串转 AST
 const result = babel.transform(code, {
     plugins: [{
         //前面的Visitor
         visitor: towx(babelTypes).visitor
     }]
-});
+})
+
 //输出转换之后的code
-console.log(result.code);
+console.log(result.code)
+
+
