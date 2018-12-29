@@ -1,5 +1,6 @@
 AST语法树转换 https://astexplorer.net/
 webpack原理介绍，以及loaders原理介绍，以及plgun介绍 https://imweb.io/topic/5baca58079ddc80f36592f1a
+V8 内存浅析 https://zhuanlan.zhihu.com/p/33816534
 
 babel相关命令
 # 转码结果输出到标准输出
