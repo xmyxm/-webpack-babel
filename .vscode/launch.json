@@ -11,7 +11,8 @@
             //"program": "${workspaceRoot}/plugin/arrow-plugn.js",
             //"program": "${workspaceRoot}/src/case/babeltypes2.js",
             //"program": "${workspaceRoot}/plugin/transform.js",
-            "program": "${workspaceRoot}/src/case/babeltypes3.js",
+            //"program": "${workspaceRoot}/src/case/babeltypes3.js",
+            "program": "${workspaceRoot}/src/case/path1.js",
             "console": "integratedTerminal",
             "protocol": "inspector"
         },
@@ -24,4 +25,3 @@
         }
     ]
 }
-
