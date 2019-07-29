@@ -6,11 +6,9 @@ const path = require('path')
 
 module.exports = {
     entry: {
-        es6: [
-            './page/home.js',
-            './page/list.js',
-            './page/detail.js'
-        ]
+        home: ['./page/home.js'],
+        list: ['./page/list.js'],
+        detail: ['./page/detail.js']
     },
     output: {
         path: path.join(__dirname, './', 'dist'),
@@ -26,26 +24,26 @@ module.exports = {
             exclude: /node_modules/,
             query: {
                 //先执行完所有Plugin，再执行Preset。多个Plugin，按照声明次序顺序执行。多个Preset，按照声明次序逆序执行。
-                "presets": [
-                    [
-                      "@babel/preset-env",
-                        {
-                        "useBuiltIns": "usage",
-                        "loose": true,
-                        "debug": true,
-                        "targets": {
-                            "browsers": [
-                                'last 2 versions','Firefox ESR',
-                                '> 1%',
-                                'ie >= 9',
-                                'iOS >= 8',
-                                'Android >= 4',
-                            ]
-                        }
-                      }
-                    ]
-                ],
-                plugins: ['@babel/plugin-transform-runtime']
+                // presets: [
+                //     [
+                //       "@babel/preset-env",
+                //         {
+                //         "useBuiltIns": "usage",
+                //         "loose": true,
+                //         "debug": true,
+                //         "targets": {
+                //             "browsers": [
+                //                 'last 2 versions','Firefox ESR',
+                //                 '> 1%',
+                //                 'ie >= 9',
+                //                 'iOS >= 8',
+                //                 'Android >= 4',
+                //             ]
+                //         }
+                //       }
+                //     ]
+                // ],
+                // plugins: ['@babel/plugin-transform-runtime']
             }
         }]
     },
