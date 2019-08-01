@@ -4,7 +4,7 @@
           "@babel/preset-env",
             {
             "modules": false, // "amd" | "umd" | "systemjs" | "commonjs" | "cjs" | false, defaults to "commonjs". 转换 es6 模块语法到其他 模块规范， false不会转换
-            "useBuiltIns": "false",
+            "useBuiltIns": false, // "usage", "entry", "false"
             "loose": false, // 默认值 false， Babel 默认使用 strict 模式；
             "debug": true, //  默认值 false， 调试模式，会打印转换时的一些信息；
             "targets": { // 当前项目所支持的浏览器配置
@@ -17,7 +17,7 @@
                     "Android >= 4",
                 ]
             },
-            "corejs": 3,
+            "corejs": false,
             "include": [], // 如果你 使用了某个新特性（如es6.array.from），无论browserslist 如何你都想 转化它， 则 include: ['es6.array.from']
             "exclude": []
           }

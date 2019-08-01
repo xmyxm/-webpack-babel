@@ -17,7 +17,19 @@ module.exports = {
     },
     mode: 'development',
     // mode: 'production',
-    devtool: '',
+    cache: true,
+    devtool: 'source-map',
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    name: "commons",
+                    chunks: "initial",
+                    minChunks: 2
+                }
+            }
+        }
+    },
     module: {
         rules: [{
             test: /\.(es6|jsx|js)$/,
@@ -25,26 +37,8 @@ module.exports = {
             exclude: /node_modules/,
             query: {
                 //先执行完所有Plugin，再执行Preset。多个Plugin，按照声明次序顺序执行。多个Preset，按照声明次序逆序执行。
-                // presets: [
-                //     [
-                //       "@babel/preset-env",
-                //         {
-                //         "useBuiltIns": "usage",
-                //         "loose": true,
-                //         "debug": true,
-                //         "targets": {
-                //             "browsers": [
-                //                 'last 2 versions','Firefox ESR',
-                //                 '> 1%',
-                //                 'ie >= 9',
-                //                 'iOS >= 8',
-                //                 'Android >= 4',
-                //             ]
-                //         }
-                //       }
-                //     ]
-                // ],
-                // plugins: ['@babel/plugin-transform-runtime']
+                // presets: [],
+                // plugins: []
             }
         }]
     },
