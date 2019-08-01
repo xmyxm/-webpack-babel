@@ -6,6 +6,10 @@ function timeout(num) {
 console.log('start: ' + Date.now())
 timeout().then(console.log('end: ' + Date.now()))
 
+const asyncFun = async ()=>{
+    await new Promise(setTimeout, 2000)
+    return '2s 延时后返回字符串'
+}
 
 function* fetchJson() {
     yield new Promise(resolve => {

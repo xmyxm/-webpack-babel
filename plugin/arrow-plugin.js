@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const babel = require('babel-core')
 const babelTypes = require('babel-types')
-const filePath = path.resolve('./src/js/arrow.js')
+const filePath = path.resolve('../data/arrow.js')
 
 const Visitor = {
     ArrowFunctionExpression: function ArrowFunctionExpression(path, state) {

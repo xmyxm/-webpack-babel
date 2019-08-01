@@ -3,7 +3,7 @@ const fs = require('fs')
 const path = require('path')
 const babel = require('babel-core')
 const babelTypes = require('babel-types')
-const filePath = path.resolve('../src/js/baidu.js')
+const filePath = path.resolve('../data/baidu.js')
 
 const baiduMap = {
     navigateTo: 'switchTab'
