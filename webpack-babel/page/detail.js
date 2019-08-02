@@ -1,3 +1,5 @@
+import "./includes"
+
 function timeout(num) {
     return new Promise(resolve => {
         setTimeout(function() { resolve() }, num)

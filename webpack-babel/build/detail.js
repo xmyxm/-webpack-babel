@@ -13,6 +13,8 @@ var _marked =
 /*#__PURE__*/
 _regeneratorRuntime.mark(fetchJson);
 
+import "./includes";
+
 function timeout(num) {
   return new _Promise(function (resolve) {
     _setTimeout(function () {
